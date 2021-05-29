@@ -29,14 +29,14 @@
 
 ![PID설명](https://user-images.githubusercontent.com/58558338/115999411-9133ef00-a626-11eb-8aa0-82a1114936e8.PNG)
 
-Windows 인공지능 (Prophet) 자동매매 환경 설치 방법
+## Windows 인공지능 (Prophet) 자동매매 환경 설치 방법
 - 아나콘다(https://www.anaconda.com/) 설치
 - pip install pyupbit
 - pip install schedule
 - conda install -c conda-forge fbprophet
 - pip install pystan --upgrade
 
-Ubuntu 20.4 인공지능 (Prophet) 자동매매 환경 설치 방법
+### Ubuntu 20.4 인공지능 (Prophet) 자동매매 환경 설치 방법
 - 4GB이상 RAM 필요 (AWS t2.medium 이상)
 - sudo apt update
 - sudo ln -sf /usr/share/zoneinfo/Asia/Seoul /etc/localtime
