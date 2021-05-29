@@ -29,7 +29,7 @@
 
 ![PID설명](https://user-images.githubusercontent.com/58558338/115999411-9133ef00-a626-11eb-8aa0-82a1114936e8.PNG)
 
-## Windows 인공지능 (Prophet) 자동매매 환경 설치 방법
+### Windows 인공지능 (Prophet) 자동매매 환경 설치 방법
 - 아나콘다(https://www.anaconda.com/) 설치
 - pip install pyupbit
 - pip install schedule
