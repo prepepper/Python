@@ -1,6 +1,6 @@
 from selenium import webdriver
 from datetime import datetime, timedelta
-from selenium.common.exceptions import NoSuchElementException
+# from selenium.common.exceptions import NoSuchElementException
 import time
 import datetime
 import random
@@ -11,7 +11,7 @@ driver.implicitly_wait(15)
 def check_exists_elem(css_selector):
     try:
         driver.find_element_by_css_selector(css_selector)
-    except NoSuchElementException:
+    except:
         return False
     return True
 
@@ -22,10 +22,11 @@ driver.get(main_url)
 
 # 로그인 페이지로 이동
 driver.find_element_by_class_name('text-linker.pa-0.font-weight-regular.tp-7.overflow-hidden.has-max-line').click()
-time.sleep(7)
 
 # 이메일로 로그인 버튼 클릭
-driver.find_element_by_css_selector('#app > div > main > div > div > div.row.fill-height.no-gutters.overflow-x-hidden > div > div > div > div:nth-child(1) > div > div.col.col-10.align-self-center > div > div.container.pa-8.container-area > div > div.row.pb-5.mt-3.no-gutters.align-center.justify-space-around > div:nth-child(4) > a > span').click()
+# driver.find_element_by_css_selector('#app > div > main > div > div > div.row.fill-height.no-gutters.overflow-x-hidden > div > div > div > div:nth-child(1) > div > div.col.col-10.align-self-center > div > div.container.pa-8.container-area > div > div.row.pb-5.mt-3.no-gutters.align-center.justify-space-around > div:nth-child(4) > a > span').click()
+driver.find_element_by_css_selector('#app > div > main > div > div > div.row.fill-height.no-gutters.overflow-x-hidden > div > div > div > div:nth-child(1) > div > div.col.col-10.align-self-center > div > div.container.pa-8.container-area > div > div.row.pb-5.mt-3.no-gutters.align-center.justify-space-around > div:nth-child(4)').click()
+
 
 # 아이디 입력
 id_box = driver.find_element_by_css_selector('#app > div > main > div > div > div.row.fill-height.no-gutters.overflow-x-hidden > div > div > div > div:nth-child(1) > div > div.col.col-10.align-self-center > div > div.container.pa-8.container-area > div > div:nth-child(4) > form > div.v-input.mb-4.v-input--hide-details.v-input--dense.theme--light.v-text-field.v-text-field--is-booted.v-text-field--enclosed.v-text-field--outlined.v-text-field--placeholder > div > div > div.v-text-field__slot > input[type=text]')
@@ -64,8 +65,10 @@ while 1 == 1:
 
 	# 해당 영상 시간 가져오기
 	video_time = driver.find_element_by_css_selector("#contentPlayer > div.row.no-gutters.control-bar.flex-nowrap.flex-column > div.col.py-2.px-4 > div > div:nth-child(4) > p:nth-child(2) > span").text
-	print("video_time - " + video_time)	
-	video_min = video_time[:2] # 영상 재생 시간(분) 가져오기
+	print("video_time - " + video_time)
+
+	# video_min = video_time[:2] # 영상 재생 시간(분) 가져오기
+	video_min = video_time.split(":")[0] # 영상 재생 시간(분) 가져오기	
 	print("video_min - " + video_min)
 
 	# 영상 재생 후 대기시간 설정
